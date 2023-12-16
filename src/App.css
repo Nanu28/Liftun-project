@@ -1,0 +1,66 @@
+/* App.css */
+
+:root {
+  --primary-color: #3498db; 
+  --secondary-color: #2ecc71; 
+  --background-color: #ecf0f1; 
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: 'Arial', sans-serif; /*fuente del texto*/
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  border-radius: 17px; /* para redondear los bordes */
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 17px; 
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%; 
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color); /* Cambia solo el fondo a azul */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #7eebaf;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
